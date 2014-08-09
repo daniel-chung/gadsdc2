@@ -22,5 +22,26 @@ for (i in abalone.columns){
   print(sum(is.na(x)==T))
 }
 
+# Data visualizations
+
+ggplot(data = abalone.data) + aes(x = Length) + geom_density()
+ggplot(data = abalone.data) + aes(x = Length) + geom_density(adjust=.25)
+
+ggplot(data = abalone.data) + 
+  aes(x = Length, y=Weight.Whole) + 
+  geom_point() +
+  ggtitle("Length vs Whole weight")
+
+ggplot(data = abalone.data) + 
+  aes(x = Length, y=Weight.Shucked) + 
+  geom_point() +
+  ggtitle("Length vs Shucked weight")
+
+ggplot(data = abalone.data) + 
+  aes(x = Length, y=Weight.Viscera) + 
+  geom_point() +
+  ggtitle("Length vs Viscera weight") + 
+    xlim(0,1)
 
 ### EOF ###
+
